@@ -1,0 +1,9 @@
+spring.application.name: ares-guard
+com:
+  andreidodu:
+    ares-guard:
+      bot:
+        google:
+          query-url: https://developers.google.com/search/apis/ipranges/googlebot.json
+        bing:
+          query-url: https://www.bing.com/toolbox/bingbot.json
