@@ -23,6 +23,8 @@ import java.util.Set;
 public class AresGuardApplication implements CommandLineRunner {
 
 
+    public static final String FILENAME_ROBOTS_TXT = "robots.txt";
+    public static final String FILENAME_HTACCESS = ".htaccess";
     private final String MARKER_START = "# ares-guard-marker-start";
     private final String MARKER_END = "# ares-guard-marker-end";
 
@@ -49,13 +51,13 @@ public class AresGuardApplication implements CommandLineRunner {
             this.writeOnFile(pathString, botsAndIPs);
             this.rewriteRobotsFile(pathString, botsAndIPs);
         } catch (IOException e) {
-            LOG.error("Failed to write on .htaccess file: {}", e.toString());
+            LOG.error("Failed to write on " + FILENAME_HTACCESS + " file: {}", e.toString());
         }
 
     }
 
     private void rewriteRobotsFile(final String pathString, Map<String, List<IpPrefixDTO>> botsAndIPs) throws IOException {
-        Path path = Paths.get(pathString + "/robots.txt");
+        Path path = Paths.get(pathString + "/" + FILENAME_ROBOTS_TXT);
 
         List<String> lst = new ArrayList<>();
         lst.add("User-agent: *");
@@ -74,7 +76,7 @@ public class AresGuardApplication implements CommandLineRunner {
     }
 
     private void writeOnFile(final String pathString, Map<String, List<IpPrefixDTO>> botsAndIPs) throws IOException {
-        Path path = Paths.get(pathString + "/.htaccess");
+        Path path = Paths.get(pathString + "/" + FILENAME_HTACCESS);
 
 
         List<String> allExistingLines = new ArrayList<>();
@@ -82,7 +84,7 @@ public class AresGuardApplication implements CommandLineRunner {
         try {
             allExistingLines = Files.readAllLines(path);
         } catch (Exception e) {
-            LOG.warn(".htaccess not found");
+            LOG.warn(FILENAME_HTACCESS + " not found");
         }
         List<String> generatedRows = generateLines(botsAndIPs);
         List<String> fullText = insertNewRows(allExistingLines, generatedRows);
