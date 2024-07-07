@@ -21,8 +21,16 @@ automatically, updating the list of allowed IP addresses.
 In order to generate or regenerate Apache2 rules it is necessary to simply pass the path to the root of the website as a
 single parameter of the jar. For example:
 
+In order to print the new rules on the screen:
+
 ```
 java -jar ares-guard.jar "/var/www/my-website.com"
+```
+
+In order to print on the screen and **write** the new rules on file:
+
+```
+java -jar ares-guard.jar "/var/www/my-website.com" -w
 ```
 
 <img src="https://andre-i.eu:8080/api/v1/ipResource/custom.png?host=https://github.com/goto-eof/ares-guard" />
