@@ -35,6 +35,6 @@ java -jar ares-guard.jar "/var/www/my-website.com" -w
 
 # Download
 
-The jar file can be downloaded from [here](https://github.com/goto-eof/ares-guard/blob/master/jar/ares-guard.jar).
+The jar file can be downloaded from [here](https://github.com/goto-eof/ares-guard/blob/master/jar).
 
 <img src="https://andre-i.eu:8080/api/v1/ipResource/custom.png?host=https://github.com/goto-eof/ares-guard" />
