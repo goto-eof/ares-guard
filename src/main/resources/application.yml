@@ -1,4 +1,5 @@
 spring.application.name: ares-guard
+spring.main.web-application-type: NONE
 com:
   andreidodu:
     ares-guard:
