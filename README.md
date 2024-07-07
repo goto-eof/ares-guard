@@ -27,7 +27,8 @@ In order to print the new rules on the screen:
 java -jar ares-guard.jar "/var/www/my-website.com"
 ```
 
-In order to print on the screen and **write** the new rules on file:
+In order to print on the screen and **write** the new rules on file (PLEASE BACKUP `.htaccess` AND `robots.txt` FILES
+FIRST):
 
 ```
 java -jar ares-guard.jar "/var/www/my-website.com" -w
