@@ -33,4 +33,8 @@ In order to print on the screen and **write** the new rules on file:
 java -jar ares-guard.jar "/var/www/my-website.com" -w
 ```
 
+# Download
+
+The jar file can be downloaded from [here](https://github.com/goto-eof/ares-guard/blob/master/jar/ares-guard.jar).
+
 <img src="https://andre-i.eu:8080/api/v1/ipResource/custom.png?host=https://github.com/goto-eof/ares-guard" />
